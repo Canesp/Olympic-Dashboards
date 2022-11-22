@@ -56,6 +56,8 @@ app = dash.Dash(
     meta_tags=[dict(name="viewport", content="width=device-width, initial-scale=1.0")],
 )
 
+server = app.server
+
 app.layout = Layout(dropdown_options_medals_athlets, dropdown_options_sweden_medals, sub_options_dropdown, game_dict, treemap_medal_dict).layout()
 
 # Set up the app layout
@@ -127,7 +129,7 @@ def update_treemap_graph(medal):
         return treemap_most_x_medals_won(medal, athlete_events)
 
 if __name__ == '__main__':
-    app.run_server(debug = False)
+    app.run_server(debug=True)
 
 
 
